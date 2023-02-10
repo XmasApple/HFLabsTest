@@ -25,10 +25,8 @@ rows = table.find_all('tr')
 data = []
 for row in rows[1:]:
     cells = row.find_all('td')
-    # print(cells)
     row_data = []
     for cell in cells:
-        # print(cell.text)
         row_data.append(cell.text)
     data.append(row_data)
 
@@ -59,14 +57,6 @@ worksheet.append_row(header_data)
 # Записываем данные
 for row in data:
     worksheet.append_row(row)
-
-# Уставливаем визуальную ширину второй колонки с описанием по максимальной ширине
-
-# Получаем максимальную ширину
-# max_width = max(data, key=lambda x: len(x[1]))
-#
-# print(max_width)
-# 1/0
 
 # Проверяем
 print(worksheet.get_all_values())
